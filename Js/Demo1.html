@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript1</title>
+</head>
+<body>
+    <script>
+        /**
+         *  var可以定义不同类型的变量。
+         *      输出到页面用  document.write();
+         */
+        //定义number类型
+        var num1 = 1;
+        var num2 = 1.2;
+        var num3 = NaN;
+        document.write(num1 + "<br>");
+        document.write(num2 + "<br>");
+        document.write(num3 + "<br>");
+
+        //定义string类型
+        var str1 = "abc";
+        var str2 = 'edf';
+        var str3 = "a";
+        document.write(str1 + "<br>");
+        document.write(str2 + "<br>");
+        document.write(str3 + "<br>");
+
+        //定义boolean类型
+        var flag = true;
+        document.write(flag + "<br>");
+
+        //定义null，undefined类型
+        var obj1 = null;
+        var obj2 = undefined;
+        var obj3;//默认为undefined
+        document.write(obj1 + "<br>");
+        document.write(obj2 + "<br>");
+        document.write(obj3 + "<br>");
+
+        //通过typeof()获取var变量的数据类型
+        document.write(typeof (num1) + "------"
+            + typeof (str1) + "------"
+            + typeof (flag) + "-----"
+            + typeof (obj1) + "-----"
+            + typeof (obj2) + "-----"
+            + typeof (obj3));
+    </script>
+</body>
+</html>

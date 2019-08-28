@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo2</title>
+</head>
+<body>
+<!--1. 第一种方式，直接在html标签上，指定事件的属性（操作）；-->
+    <!--//  缺点： 耦合性高，不利于维护。-->
+    <!--<img id = "light" src="img/off.gif" onclick="alert('我被点了');">-->
+
+
+
+    <script>
+        function fun() {
+            alert("我被点啦！")
+        }
+    </script>
+
+    <img id = "light" src="img/off.gif" onclick= fun()>
+
+</body>
+</html>

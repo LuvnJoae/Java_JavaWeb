@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo1</title>
+</head>
+<body>
+    <input id="open" type="button" value="打开" >
+    <input id="close" type="button" value="关闭">
+    <script>
+        /**
+         *  打开与关闭 新窗口
+
+            open（）：打开一个新的窗口，可以指定地址
+                    返回新的Window对象
+            close（）：关闭浏览器窗口
+                    哪个Window对象调用的close方法，就关闭哪个Window窗口。
+         */
+        var buttonOpen = document.getElementById("open");
+        var newWindow;
+        buttonOpen.onclick = function () {
+            newWindow = open();
+        };
+        var buttonClose = document.getElementById("close");
+        buttonClose.onclick = function () {
+//            //直接这么写，会关闭当前窗口，因为直接用close，默认是当前Window对象调用的这个方法。
+//            close();
+            //用打开新窗口返回的Window对象，来调用close方法，关闭新窗口
+            newWindow.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<!ELEMENT students (student*) >         <!--标签为students的内部只能有名字为student的子标签，且数量为0或多个（正则）-->
+<!ELEMENT student (name,age,sex)>       <!--标签为student的内部只能有名字为name,age,sex的子标签，且数量只有一个-->
+<!ELEMENT name (#PCDATA)>               <!--标签为name的为字符串类型-->
+<!ELEMENT age (#PCDATA)>                <!--标签为age的为字符串类型-->
+<!ELEMENT sex (#PCDATA)>                <!--标签为sex的为字符串类型-->
+<!ATTLIST student number ID #REQUIRED>  <!-- 标签为student的有属性number，属性类型为ID，number属性为REQUIRED（必须出现）-->
+
+
+        <!--!ELEMENT 为标签名，!ATTLIST 为标签属性-->
+        <!--满足正则表达式-->

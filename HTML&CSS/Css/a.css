@@ -1,0 +1,26 @@
+div{
+    color: aquamarine;
+}
+p{
+    color: red;
+    font-size: 30px;
+}
+#div1{
+    color: coral;
+}
+.div1{
+    color: cornflowerblue;
+}
+a:link{
+    color: red;
+}
+a:hover{
+    color: blue;
+}
+a:active{
+    color: green;
+}
+a:visited{
+     color: black;
+ }
+

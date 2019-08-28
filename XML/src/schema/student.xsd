@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns="http://www.itcast.cn/xml"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.itcast.cn/xml" elementFormDefault="qualified">
+    <xsd:element name="students" type="studentsType"/>               <!-- 元素（根标签）为students，类型为自定义的studentsType -->
+    <xsd:complexType name="studentsType">                            <!-- 定义studentsType类型的具体要求 -->
+        <xsd:sequence>                                               <!-- 顺序结构 -->
+            <xsd:element name="student" type="studentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>                                              <!-- 定义包含元素 student  ，其类型为 studentType  最小值为0 ，最大值随便 -->
+    </xsd:complexType>                                               <!-- 下面的也是一样 -->
+    <xsd:complexType name="studentType">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="age" type="ageType" />
+            <xsd:element name="sex" type="sexType" />
+        </xsd:sequence>
+        <xsd:attribute name="number" type="numberType" use="required"/>
+    </xsd:complexType>
+    <xsd:simpleType name="sexType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="male"/>
+            <xsd:enumeration value="female"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ageType">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="256"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="numberType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="heima_\d{4}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema> 

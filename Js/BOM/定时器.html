@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * 一次性定时器 setTimeOut(code, millisec)
+         *      返回值：唯一标识（一个名字）
+         *      取消：clearTimeOut
+         */
+        function fun1() {
+            alert("一次性定时器");
+        }
+        var timer1 = setTimeout(fun1, 3000);
+        clearTimeout(timer1);
+        /**
+         * 循环性定时器 setInterval(code, millisec)
+         *      返回值：唯一标识（一个名字）
+         *      取消：clearInterval
+         */
+        var timer2 = setInterval(fun1,2000);
+        clearInterval(timer2);
+    </script>
+</body>
+</html>

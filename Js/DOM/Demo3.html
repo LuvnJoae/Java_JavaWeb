@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <img id = "light2" src="img/off.gif">
+
+    <script>
+
+        function fun2() {
+            alert("咋老点我");
+        }
+        //1. 获取light2对象
+        var light2 = document.getElementById("light2");
+        //2. 绑定事件
+        light2.onclick = fun2();//这里是fun2而不是fun2()，要注意。
+                              //不然会先加载fun2()，先弹出，再给左边
+                              //这里的意思是，onclick这个事件，与fun2关联，
+                              //而不是与fun2（）运行的结果关联
+
+    </script>
+
+</body>
+</html>
