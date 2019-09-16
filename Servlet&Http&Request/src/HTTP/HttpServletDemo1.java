@@ -1,4 +1,4 @@
-package Demo1;
+package HTTP;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
