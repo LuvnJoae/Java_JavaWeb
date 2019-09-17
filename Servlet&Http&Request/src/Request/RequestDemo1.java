@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 获取请求行
+ */
 @WebServlet(name = "RequestDemo1", urlPatterns = "/requestDemo1")
 public class RequestDemo1 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -17,7 +20,7 @@ public class RequestDemo1 extends HttpServlet {
         //1. 获取请求方式 Get
         String method = request.getMethod();
         System.out.println(method);
-        //2. 获取虚拟目录 /JavaWeb
+        //2. 获取虚拟目录 /Servlet_Http_Request_war_exploded
         String contextPath = request.getContextPath();
         System.out.println(contextPath);
         //3. 获取Servlet路径 /requestDemo1

@@ -14,9 +14,9 @@ public class HttpServletDemo1 extends HttpServlet{
         System.out.println("doPost");
     }
 
-//    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("doGet");
-//
-//    }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doGet");
+
+    }
 }
