@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib (2)">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.8.0/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils-1.8.0/commons-beanutils-1.8.0-sources" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+  </library>
+</component>
