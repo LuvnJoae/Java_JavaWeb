@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /**
+         * 分析：
+         *      点击超链接或图片，需要更换一张
+         *      1. 给超链接和图片绑定单机事件
+         *      2. 重新设置图片的src属性
+         *
+         *  注意点：
+         *     通过 点击图片 进行刷新
+         *      1. 由于缓存的存在，当点击更换图片时，浏览器仍然会默认加载缓存中的图片，导致图片没有更新
+         *      2. 通过 ？ 参数名，实现一个不含任何实际参数的欺骗浏览器动作，这样浏览器就不会直接加载缓存中的Servlet
+         *      3. 通过后缀添加时间戳的方式，避免？ 参数名的重复，实现图片的持续刷新（每次的参数名都不一样，这样就不会存在加载过的Servlet缓存）
+         *
+         *     通过 点击超链接 进行刷新
+         *      1. href为空，则默认刷新当前页面
+         *      2. href为#，则浏览器地址栏网址后面会多1个#。不会刷新页面，会回到页面顶部。只是在页面内部跳转，并没有重新加载页面。
+         *
+         *   总结：
+         *      1. 点击图片进行刷新，本质上是通过重新访问checkCodeServlet，实现对图片的刷新
+         *      2. 点击超链接进行刷新，本质上是通过重新刷新当前页面，实现对checkCodeServlet的重新访问
+         *          当然，也可以对超链接进行添加 单击事件，实现单击超链接时，对src进行更改。如下
+         */
+        window.onload = function () {
+            //1. 获取图片对象
+            var img = document.getElementById("checkCode");
+            //2. 绑定单机事件
+            img.onclick = function () {
+                //加时间戳
+                var date = new Date().getTime();
+                //刷新图片来源
+                img.src = "/Response_ServletContext/checkCodeServlet?" + date;
+            }
+
+            // var a = document.getElementById("change");
+            // a.onclick = function () {
+            //     var img = document.getElementById("checkCode");
+            //     var date = new Date().getTime();
+            //     img.src = "/Response_ServletContext/checkCodeServlet?" + date;
+            // }
+        }
+    </script>
+</head>
+<body>
+    <img id="checkCode" src="/Response_ServletContext/checkCodeServlet">
+    <a id="change" href="">看不清换一张</a>
+</body>
+</html>
